@@ -69,7 +69,7 @@ eval("!function (e, o) {\n   true ? module.exports = o(__webpack_require__(/*! d
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/styles/global.css\");\n/* harmony import */ var _styles_form_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/form.css */ \"./src/styles/form.css\");\n/* harmony import */ var _styles_schedule_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/schedule.css */ \"./src/styles/schedule.css\");\n/* harmony import */ var _libs_dayjs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./libs/dayjs.js */ \"./src/libs/dayjs.js\");\n\n\n//css\n\n\n\n//day.js\n\n\n/* testando se o day ta funcionando:\nimport dayjs from \"dayjs\"\nconsole.log(dayjs().format(\"HH:mm\"))\n*/\n\n//# sourceURL=webpack://hairday/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/styles/global.css\");\n/* harmony import */ var _styles_form_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/form.css */ \"./src/styles/form.css\");\n/* harmony import */ var _styles_schedule_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/schedule.css */ \"./src/styles/schedule.css\");\n/* harmony import */ var _libs_dayjs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./libs/dayjs.js */ \"./src/libs/dayjs.js\");\n/* harmony import */ var _modules_form_submit_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/form/submit.js */ \"./src/modules/form/submit.js\");\n\n\n//css\n\n\n\n//day.js\n\n\n//js\n\n\n/* testando se o day ta funcionando:\nimport dayjs from \"dayjs\"\nconsole.log(dayjs().format(\"HH:mm\"))\n*/\n\n//# sourceURL=webpack://hairday/./src/index.js?");
 
 /***/ }),
 
@@ -81,6 +81,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dayjs */ \"./node_modules/dayjs/dayjs.min.js\");\n/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var dayjs_locale_pt_br__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dayjs/locale/pt-br */ \"./node_modules/dayjs/locale/pt-br.js\");\n/* harmony import */ var dayjs_locale_pt_br__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs_locale_pt_br__WEBPACK_IMPORTED_MODULE_1__);\n\n\ndayjs__WEBPACK_IMPORTED_MODULE_0___default().locale(\"pt-br\");\n\n//# sourceURL=webpack://hairday/./src/libs/dayjs.js?");
+
+/***/ }),
+
+/***/ "./src/modules/form/submit.js":
+/*!************************************!*\
+  !*** ./src/modules/form/submit.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dayjs */ \"./node_modules/dayjs/dayjs.min.js\");\n/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);\n\nconst form = document.querySelector(\"form\");\nconst selectedDate = document.getElementById(\"date\");\n\n//load current date for the date input\nselectedDate.value = dayjs__WEBPACK_IMPORTED_MODULE_0___default()(new Date()).format(\"YYYY-MM-DD\");\nselectedDate.min = dayjs__WEBPACK_IMPORTED_MODULE_0___default()(new Date()).format(\"YYYY-MM-DD\");\nform.onsubmit = event => {\n  //prevent default page reload\n  event.preventDefault();\n};\n\n//# sourceURL=webpack://hairday/./src/modules/form/submit.js?");
 
 /***/ }),
 
