@@ -15,13 +15,13 @@ module.exports = {
       static:{
         directory: path.join(__dirname, "dist")
       },
-      port: 3333,
+      port: 3000,
       open: true,
       liveReload: true,
     },
     plugins: [
       new HTMLWebpackPlugin({
-        template: path.resolve(__dirname, "src", "index.html"),
+        template: path.resolve(__dirname, "index.html"),
         favicon:path.resolve("src","assets","scissors.svg"),
       }),
       new CopyWebpackPlugin({
@@ -36,12 +36,12 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/,
           use: ["style-loader", "css-loader"],
           exclude: "/node_modules",
         },
         {
-          test: /\.js$/i,
+          test: /\.js$/,
           use: {
             loader: "babel-loader",
             options: {
