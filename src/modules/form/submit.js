@@ -1,6 +1,7 @@
 import dayjs from "dayjs"
 
 import {scheduleNew} from "../../services/schedule-new.js"
+import {schedulesDay} from "../schedules/load.js"
 
 const form = document.querySelector("form")
 const selectedDate = document.getElementById("date")
@@ -30,15 +31,18 @@ form.onsubmit = async(event) => {
 
     const [hour] = hourSelected.innerText.split(":")
     const when = dayjs(selectedDate.value).add(hour, "hour")
-        
+
     const id = new Date().getTime()
-    
+
     await scheduleNew({
       id,
       name,
       when,
     })
 
+    //reload the updated list of appointments and clean name field
+    await schedulesDay()
+    clientName.value = ""
   } catch (error) {
       alert("Not possible to proceed with booking")
       console.log(error)

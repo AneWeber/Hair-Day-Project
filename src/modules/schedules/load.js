@@ -14,5 +14,5 @@ export async function schedulesDay (){
   schedulesShow({dailySchedules})
   
   //render the available slots:
-  hoursLoad({date})
+  hoursLoad({date, dailySchedules})
 }
