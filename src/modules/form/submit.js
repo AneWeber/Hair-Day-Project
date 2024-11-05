@@ -13,7 +13,7 @@ selectedDate.value = inputToday
 selectedDate.min = inputToday
 
 
-form.onsubmit = async(event) => {
+form.onsubmit = async (event) => {
 //prevent default page reload
   event.preventDefault()
   try{
@@ -32,7 +32,7 @@ form.onsubmit = async(event) => {
     const [hour] = hourSelected.innerText.split(":")
     const when = dayjs(selectedDate.value).add(hour, "hour")
 
-    const id = new Date().getTime()
+    const id = new Date().getTime().toString()
 
     await scheduleNew({
       id,
